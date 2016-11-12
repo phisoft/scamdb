@@ -1,1 +1,28 @@
-/* This file is for your main application css. */
+.alert:empty { display: none; }
+
+.logo {
+  display: inline-block;
+  margin-bottom: 1em;
+  font-size: 18pt;
+}
+
+.search {
+  background-color: #f0f0f0;
+  padding: 30px;
+  margin: 10px;
+  border-radius: 0.5em;
+}
+
+input[name=query] {
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+#search-result {
+  padding: 0.5em;
+}

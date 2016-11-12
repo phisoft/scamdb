@@ -1,10 +1,13 @@
 <div class="search">
   <h3> Check before you pay.</h3>
-  <p class="header-info"> Search through list phone, email & bank account number previously reported used by scammers</p> 
-  <form method="get" action="/api">
+  <p class="header-info"> Search through list phone, email, passport & bank account number previously reported used by scammers</p> 
+  <form method="get" action="/scammers">
     <div class="row">
-    <div class="column"><input type="text" name="query" size="30" placeholder="Name, email, phone or bank account" required /></div>
-    <div class="column"><input type="submit" value="Search" /></div>
+    <div class="column"><input type="text" name="query" size="30" placeholder="Name, passport, email, phone or bank account" required /></div>
+    <div class="column"><input id="submit-search" type="submit" value="Search" /></div>
+    </div>
+    <div class="row result">
+      <div id="search-result"></div>
     </div>
   </form>
 </div>
@@ -12,13 +15,21 @@
 <div class="container form">
   <h5> Scammed? </h5>
   <p class="header-info"> Help others like you by submitting scammers information below.</p> 
-  <form method="post" action="/api">
+  <form method="post" action="/scammers">
+    <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>" />
     <div class="row"><div class="column">
-      <label for="fullname"> Name </label>
-      <input name="fullname" placeholder="Eg: Saqib Hussain Stung" type="text" />
+      <label for="full_name"> Name </label>
+      <input name="full_name" placeholder="Eg: Saqib Hussain Stung" type="text" />
     </div><div class="column">
       <label for="phone"> Phone Number </label>
       <input name="phone" placeholder="Eg: +60172964533 (international format)" type="text" />
+    </div></div>
+    <div class="row"><div class="column">
+      <label for="passport"> Passport No/ID </label>
+      <input name="passport" placeholder="Eg: HA847477487" type="text" />
+    </div><div class="column">
+      <label for="email"> Email </label>
+      <input name="email" placeholder="Eg: saimscammer@gmail.com" type="text" />
     </div></div>
     <div class="row"><div class="column">
       <label for="bank_name"> Bank Name </label>
@@ -28,13 +39,9 @@
       <input name="bank_account" placeholder="Eg: 312194916977" type="text" />
     </div></div>
     <div class="row"><div class="column">
-      <label for="email"> Email </label>
-      <input name="email" placeholder="Eg: saimscammer@gmail.com" type="text" />
+      <label for="website"> Website </label>
+      <input name="website" placeholder="Eg: mudah.my (where scammer seen active)" type="text" />
     </div><div class="column">
-      <label for="ref_website"> Website </label>
-      <input name="ref_website" placeholder="Eg: mudah.my (where scammer seen active)" type="text" />
-    </div></div>
-    <div class="row"><div class="column">
     <label for="country"> Country </label>
     <select name="country">
       <option value=""> Select Country </option>
@@ -288,9 +295,10 @@
       <option value="ZM">Zambia</option>
       <option value="ZW">Zimbabwe</option>
       </select>
-    </div><div class="column">
-    <label for="info"> Brief Information </label>
-    <input name="info" placeholder="eg: Pretend to be a good muslim with 8 months pregnant wife" type="text" />
+    </div></div>
+    <div class="row"><div class="column">
+    <label for="info"> Scam Details </label>
+    <input name="info" multiline placeholder="eg: Pretend to be a good muslim with 8 months pregnant wife" type="text" />
     </div></div>
     <input type="submit" value="Submit" />
   </form>
