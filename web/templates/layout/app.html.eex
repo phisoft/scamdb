@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Scammer Database Database of phone, bank account number, phone used in online scams transaction">
+    <meta name="author" content="scamdb.org">
 
     <title>ScamDB - Check before you buy!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/milligram.min.css") %>">
@@ -29,6 +29,9 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
+      <footer>
+        &copy; 2016 ScamDB.org
+      </footer>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

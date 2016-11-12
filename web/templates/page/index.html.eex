@@ -1,6 +1,6 @@
 <div class="search">
   <h3> Check before you pay.</h3>
-  <p class="header-info"> Search through list of scammers info to reduce risk of being scammed.</p> 
+  <p class="header-info"> Search through list phone, email & bank account number previously reported used by scammers</p> 
   <form method="get" action="/api">
     <div class="row">
     <div class="column"><input type="text" name="query" size="30" placeholder="Name, email, phone or bank account" required /></div>
@@ -11,11 +11,11 @@
 
 <div class="container form">
   <h5> Scammed? </h5>
-  <p class="header-info"> Help others like you by submitting their info here.</p> 
+  <p class="header-info"> Help others like you by submitting scammers information below.</p> 
   <form method="post" action="/api">
     <div class="row"><div class="column">
       <label for="fullname"> Name </label>
-      <input name="fullname" placeholder="Eg: Mario Stung" type="text" />
+      <input name="fullname" placeholder="Eg: Saqib Hussain Stung" type="text" />
     </div><div class="column">
       <label for="phone"> Phone Number </label>
       <input name="phone" placeholder="Eg: +60172964533 (international format)" type="text" />
@@ -25,11 +25,11 @@
       <input name="bank_name" placeholder="Eg: Standard Chartered Bank" type="text" />
     </div><div class="column">
       <label for="bank_account"> Bank Account Number </label>
-      <input name="bank_account" placeholder="Eg: Mario Stung" type="text" />
+      <input name="bank_account" placeholder="Eg: 312194916977" type="text" />
     </div></div>
     <div class="row"><div class="column">
       <label for="email"> Email </label>
-      <input name="email" placeholder="Eg: Mario Stung" type="text" />
+      <input name="email" placeholder="Eg: saimscammer@gmail.com" type="text" />
     </div><div class="column">
       <label for="ref_website"> Website </label>
       <input name="ref_website" placeholder="Eg: mudah.my (where scammer seen active)" type="text" />
