@@ -1,41 +1,24 @@
-# Compiled Lua sources
-luac.out
+# App artifacts
+/_build
+/db
+/deps
+/*.ez
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+# Generated on crash by the VM
+erl_crash.dump
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+# Static artifacts
+/node_modules
 
-# Precompiled Headers
-*.gch
-*.pch
+# Since we are building assets from web/static,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/priv/static/
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+# The config/prod.secret.exs file by default contains sensitive
+# data and you should not commit it into version control.
+#
+# Alternatively, you may comment the line below and commit the
+# secrets file as long as you replace its contents by environment
+# variables.
+/config/prod.secret.exs
