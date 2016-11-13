@@ -22,5 +22,6 @@ defmodule Scamdb.Scammer do
     struct
     |> cast(params, [:full_name, :passport, :email, :phone, :bank_name, :bank_account, :ip, :website, :country])
     |> validate_required([:full_name, :bank_name, :bank_account, :ip, :website, :country])
+    |> validate_format(:email, ~r/@/)
   end
 end
