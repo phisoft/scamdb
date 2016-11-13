@@ -24,5 +24,6 @@ defmodule Scamdb.Scammer do
     |> validate_required([:full_name, :bank_name, :bank_account, :ip, :website, :country])
     |> validate_format(:email, ~r/@/)
     |> validate_format(:bank_account, ~r/[\d]{5,25}/)
+    |> validate_format(:phone, ~r/[\+\d]{5, 20}/)
   end
 end
