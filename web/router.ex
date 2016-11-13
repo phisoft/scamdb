@@ -17,7 +17,7 @@ defmodule Scamdb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/scammers", ScammerController, only: [:index, :create]
+    resources "/scammers", ScammerController
   end
 
 end

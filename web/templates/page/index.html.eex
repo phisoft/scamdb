@@ -16,34 +16,34 @@
   <h5> Scammed? </h5>
   <p class="header-info"> Help others like you by submitting scammers information below.</p> 
   <form method="post" action="/scammers">
-    <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>" />
+    <input type="hidden" id="csrf" name="_csrf_token" value="<%= get_csrf_token() %>" />
     <div class="row"><div class="column">
       <label for="full_name"> Name </label>
-      <input name="full_name" placeholder="Eg: Saqib Hussain Stung" type="text" />
+      <input id="full_name" name="full_name" placeholder="Eg: Saqib Hussain Stung" type="text" />
     </div><div class="column">
       <label for="phone"> Phone Number </label>
-      <input name="phone" placeholder="Eg: +60172964533 (international format)" type="text" />
+      <input id="phone" name="phone" placeholder="Eg: +60172964533 (international format)" type="text" />
     </div></div>
     <div class="row"><div class="column">
       <label for="passport"> Passport No/ID </label>
-      <input name="passport" placeholder="Eg: HA847477487" type="text" />
+      <input id="passport" name="passport" placeholder="Eg: HA847477487" type="text" />
     </div><div class="column">
       <label for="email"> Email </label>
-      <input name="email" placeholder="Eg: saimscammer@gmail.com" type="text" />
+      <input id="email" name="email" placeholder="Eg: saimscammer@gmail.com" type="text" />
     </div></div>
     <div class="row"><div class="column">
       <label for="bank_name"> Bank Name </label>
-      <input name="bank_name" placeholder="Eg: Standard Chartered Bank" type="text" />
+      <input id="bank_name" name="bank_name" placeholder="Eg: Standard Chartered Bank" type="text" />
     </div><div class="column">
       <label for="bank_account"> Bank Account Number </label>
-      <input name="bank_account" placeholder="Eg: 312194916977" type="text" />
+      <input id="bank_account" name="bank_account" placeholder="Eg: 312194916977" type="text" />
     </div></div>
     <div class="row"><div class="column">
       <label for="website"> Website </label>
-      <input name="website" placeholder="Eg: mudah.my (where scammer seen active)" type="text" />
+      <input id="website" name="website" placeholder="Eg: mudah.my (where scammer seen active)" type="text" />
     </div><div class="column">
     <label for="country"> Country </label>
-    <select name="country">
+    <select id="country" name="country">
       <option value=""> Select Country </option>
       <option value="AF">Afghanistan</option>
       <option value="AX">Åland Islands</option>
@@ -297,9 +297,10 @@
       </select>
     </div></div>
     <div class="row"><div class="column">
-    <label for="info"> Scam Details </label>
+    <label id="info" for="info"> Scam Details </label>
     <input name="info" multiline placeholder="eg: Pretend to be a good muslim with 8 months pregnant wife" type="text" />
     </div></div>
-    <input type="submit" value="Submit" />
+    <br/>
+    <input id="submit-form" type="submit" value="Submit" />
   </form>
 </div>

@@ -1,27 +1,35 @@
-// Brunch automatically concatenates all files in your
-// watched paths. Those paths can be configured at
-// config.paths.watched in "brunch-config.js".
-//
-// However, those files will only be executed if
-// explicitly imported. The only exception are files
-// in vendor, which are never wrapped in imports and
-// therefore are always executed.
+import $ from "jquery";
 
-// Import dependencies
-//
-// If you no longer want to use a dependency, remember
-// to also remove its path from "config.paths.watched".
-// import "phoenix_html"
+$.ajaxSetup({
+  contentType:"application/json; charset=utf-8",
+  dataType:"json",
+  beforeSend: function(xhr) {
+    xhr.setRequestHeader('x-csrf-token', $("#csrf").val())
+  }
+})
 
-// Import local files
-//
-// Local files can be imported directly using relative
-// paths "./socket" or full ones "web/static/js/socket".
+$("#submit-search").click(function(e){
+  $("#search-result").append("hello")
+  e.preventDefault()
+})
 
-// import socket from "./socket"
-import $ from 'jquery';
 
-$('#submit-search').click(function(e){
-  $('#search-result').append("hello"); 
-  e.preventDefault();
+$("#submit-form").click(function(e){
+  e.preventDefault()
+  var data = {
+    full_name: $("#full_name").val(),
+    phone: $("#phone").val(),
+    passport: $("#passport").val(),
+    email: $("#email").val(),
+    bank_name: $("#bank_name").val(),
+    bank_account: $("#bank_account").val(),
+    website: $("#website").val(),
+    country: $("#country").val(),
+    info: $("#info").val()
+  }
+
+  var params = JSON.stringify({ "scammer" : data });
+  $.post("/scammers", params, function(response, status, xhr) {
+      console.log(response)
+  })
 })
