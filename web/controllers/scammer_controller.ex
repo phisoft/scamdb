@@ -9,7 +9,11 @@ defmodule Scamdb.ScammerController do
     scammers = Repo.all(
       from s in Scammer,
       select: s,
-      where: ilike(s.full_name, ^("%#{query}%"))
+      where: ilike(s.full_name, ^("#{query}%")) 
+      or     s.phone == ^query
+      or     s.email == ^query
+      or     s.bank_account == ^query
+      or     s.passport == ^query
     )
     render(conn, "index.json", scammers: scammers)
   end
