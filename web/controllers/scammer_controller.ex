@@ -1,16 +1,23 @@
 defmodule Scamdb.ScammerController do
   use Scamdb.Web, :controller
+  require Logger
 
   alias Scamdb.Scammer
 
-  def index(conn, _params) do
-    scammers = Repo.all(Scammer)
+  def index(conn, %{"query" => query}) do
+    IO.inspect conn
+    scammers = Repo.all(
+      from s in Scammer,
+      select: s,
+      where: ilike(s.full_name, ^("%#{query}%"))
+    )
     render(conn, "index.json", scammers: scammers)
   end
 
   def create(conn, %{"scammer" => scammer_params}) do
+    scammer_params = Map.put_new(scammer_params, "ip", "127.0.0.1")
+    IO.inspect conn.remote_ip
     changeset = Scammer.changeset(%Scammer{}, scammer_params)
-
     case Repo.insert(changeset) do
       {:ok, scammer} ->
         conn

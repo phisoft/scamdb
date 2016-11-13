@@ -26,3 +26,13 @@ input[name=query] {
 #search-result {
   padding: 0.5em;
 }
+
+.risky {
+  color: red;
+  font-weight: bold;
+}
+
+.clean {
+  color: green;
+  font-weight: bold;
+}

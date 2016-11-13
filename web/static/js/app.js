@@ -1,21 +1,26 @@
 import $ from "jquery";
 
 $.ajaxSetup({
-  contentType:"application/json; charset=utf-8",
-  dataType:"json",
   beforeSend: function(xhr) {
     xhr.setRequestHeader('x-csrf-token', $("#csrf").val())
   }
 })
 
 $("#submit-search").click(function(e){
-  $("#search-result").append("hello")
   e.preventDefault()
-})
+  var query = { query: $("#query").val() };
+  $.get("/scammers", query, function(response, status, xhr){
+    var res = response.data.length > 0 ? 
+      '<span class="risky"> Risky </span>' : 
+      '<span class="clean"> Clean </span>' ;
 
+    $("#search-result").html("Verdict: " + res);
+  })
+})
 
 $("#submit-form").click(function(e){
   e.preventDefault()
+
   var data = {
     full_name: $("#full_name").val(),
     phone: $("#phone").val(),
@@ -27,9 +32,9 @@ $("#submit-form").click(function(e){
     country: $("#country").val(),
     info: $("#info").val()
   }
-
-  var params = JSON.stringify({ "scammer" : data });
+  
+  var params = { "scammer" : data };
   $.post("/scammers", params, function(response, status, xhr) {
-      console.log(response)
+        console.log(response)
   })
 })

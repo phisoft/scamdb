@@ -3,7 +3,7 @@
   <p class="header-info"> Search through list phone, email, passport & bank account number previously reported used by scammers</p> 
   <form method="get" action="/scammers">
     <div class="row">
-    <div class="column"><input type="text" name="query" size="30" placeholder="Name, passport, email, phone or bank account" required /></div>
+    <div class="column"><input id="query" type="text" name="query" size="30" placeholder="Name, passport, email, phone or bank account" required /></div>
     <div class="column"><input id="submit-search" type="submit" value="Search" /></div>
     </div>
     <div class="row result">
@@ -21,14 +21,14 @@
       <label for="full_name"> Name </label>
       <input id="full_name" name="full_name" placeholder="Eg: Saqib Hussain Stung" type="text" />
     </div><div class="column">
-      <label for="phone"> Phone Number </label>
+      <label for="phone"> Phone Number (optional) </label>
       <input id="phone" name="phone" placeholder="Eg: +60172964533 (international format)" type="text" />
     </div></div>
     <div class="row"><div class="column">
-      <label for="passport"> Passport No/ID </label>
+      <label for="passport"> Passport No/ID (optional) </label>
       <input id="passport" name="passport" placeholder="Eg: HA847477487" type="text" />
     </div><div class="column">
-      <label for="email"> Email </label>
+      <label for="email"> Email (optional) </label>
       <input id="email" name="email" placeholder="Eg: saimscammer@gmail.com" type="text" />
     </div></div>
     <div class="row"><div class="column">
