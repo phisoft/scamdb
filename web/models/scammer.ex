@@ -21,6 +21,6 @@ defmodule Scamdb.Scammer do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:full_name, :passport, :email, :phone, :bank_name, :bank_account, :ip, :website, :country])
-    |> validate_required([:full_name, :passport, :email, :phone, :bank_name, :bank_account, :ip, :website, :country])
+    |> validate_required([:full_name, :bank_name, :bank_account, :ip, :website, :country])
   end
 end
