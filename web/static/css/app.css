@@ -36,3 +36,12 @@ input[name=query] {
   color: green;
   font-weight: bold;
 }
+
+.form input:invalid{
+  border: 1px solid red;
+  color: red;
+}
+
+#form-error {
+  color: red;
+}

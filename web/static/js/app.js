@@ -1,6 +1,7 @@
 import $ from "jquery";
 
 $.ajaxSetup({
+  dataType: "json",
   beforeSend: function(xhr) {
     xhr.setRequestHeader('x-csrf-token', $("#csrf").val())
   }
@@ -32,9 +33,17 @@ $("#submit-form").click(function(e){
     country: $("#country").val(),
     info: $("#info").val()
   }
-  
-  var params = { "scammer" : data };
-  $.post("/scammers", params, function(response, status, xhr) {
-        console.log(response)
-  })
+
+  $.post("/scammers", { "scammer": data })
+   .done(function(data){
+      $("#form-error").html("Thank you!"); 
+    })
+    .fail(function(xhr){
+      console.log(xhr.responseJSON.errors);
+      $("#form-error").html("One of the field have invalid value."); 
+      $.each(xhr.responseJSON.errors, function(key, value){
+        $("#" + key)[0].setCustomValidity(value[0]);
+        $("#" + key)[0].checkValidity();
+      })
+    })
 })
