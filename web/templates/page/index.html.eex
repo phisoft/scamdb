@@ -22,7 +22,7 @@
       <label for="full_name"> Name </label>
       <input id="full_name" name="full_name" placeholder="Eg: Saqib Hussain Stung" type="text"/>
     </div><div class="column">
-      <label for="phone"> Phone Number </label>
+      <label for="phone"> Phone Number (optional) </label>
       <input id="phone" name="phone" placeholder="Eg: +60172964533 (international format)" type="text" />
     </div></div>
     <div class="row"><div class="column">

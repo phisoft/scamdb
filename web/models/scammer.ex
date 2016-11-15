@@ -21,7 +21,7 @@ defmodule Scamdb.Scammer do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:full_name, :passport, :email, :phone, :bank_name, :bank_account, :ip, :website, :country])
-    |> validate_required([:full_name, :phone, :bank_name, :bank_account, :ip, :website, :country])
+    |> validate_required([:full_name, :bank_name, :bank_account, :ip, :website, :country])
     |> validate_format(:email, ~r/[a-z\d\.\+]+@[\w]+[\.a-z]+/x)
     |> validate_format(:phone, ~r/^\+\d{9,20}$/x)
     |> validate_format(:website, ~r/^[\w\.]+\.[a-z]{2,3}$/x)
