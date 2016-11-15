@@ -16,7 +16,7 @@
   <h5> Scammed? </h5>
   <p class="header-info"> Help others like you by submitting scammers information below.</p> 
   <p id="form-error"> </p>
-  <form method="post" action="/scammers">
+  <form id="form" method="post" action="/scammers">
     <input type="hidden" id="csrf" name="_csrf_token" value="<%= get_csrf_token() %>" />
     <div class="row"><div class="column">
       <label for="full_name"> Name </label>

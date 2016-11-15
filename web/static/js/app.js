@@ -36,7 +36,8 @@ $("#submit-form").click(function(e){
 
   $.post("/scammers", { "scammer": data })
    .done(function(data){
-      $("#form-error").html("Thank you!"); 
+      $("#form-error").html("We received your submission. Thank you!"); 
+      $("#form")[0].reset();
     })
     .fail(function(xhr){
       console.log(xhr.responseJSON.errors);
