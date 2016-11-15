@@ -47,10 +47,10 @@ $("#submit-form").click(function(e){
         this.checkValidity();
       })
       //check valid
-      $("#form-error").html("One of the field have invalid value."); 
       $.each(xhr.responseJSON.errors, function(key, value){
         $("#" + key)[0].setCustomValidity(value[0]);
         $("#" + key)[0].checkValidity();
+        $("#form-error").html("At least one field has invalid value: " + key + " " +  value[0]); 
       })
     })
 })
