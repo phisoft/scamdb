@@ -34,6 +34,8 @@ $("#submit-form").click(function(e){
     info: $("#info").val()
   }
 
+  $("#form-error").html("Processing. Please wait .."); 
+
   $.post("/scammers", { "scammer": data })
    .done(function(data){
       $("#form-error").html("We received your submission. Thank you!"); 
