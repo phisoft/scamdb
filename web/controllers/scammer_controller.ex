@@ -19,8 +19,7 @@ defmodule Scamdb.ScammerController do
   end
 
   def create(conn, %{"scammer" => scammer_params}) do
-    scammer_params = Map.put_new(scammer_params, "ip", "127.0.0.1")
-    IO.inspect conn.remote_ip
+    scammer_params = Map.put_new(scammer_params, "ip", conn.remote_ip)
     changeset = Scammer.changeset(%Scammer{}, scammer_params)
     case Repo.insert(changeset) do
       {:ok, scammer} ->
