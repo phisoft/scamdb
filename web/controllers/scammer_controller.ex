@@ -19,7 +19,8 @@ defmodule Scamdb.ScammerController do
   end
 
   def create(conn, %{"scammer" => scammer_params}) do
-    scammer_params = Map.put_new(scammer_params, "ip", conn.remote_ip)
+    remote_ip = Enum.join(Tuple.to_list(conn.remote_ip), ".")
+    scammer_params = Map.put_new(scammer_params, "ip", remote_ip)
     changeset = Scammer.changeset(%Scammer{}, scammer_params)
     case Repo.insert(changeset) do
       {:ok, scammer} ->
