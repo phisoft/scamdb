@@ -38,6 +38,10 @@ $("#submit-form").click(function(e){
    .done(function(data){
       $("#form-error").html("We received your submission. Thank you!"); 
       $("#form")[0].reset();
+      //remove error msg after 1min
+      setTimeout(function(){
+        $("#form-error").html("");
+      }, 2500)
     })
     .fail(function(xhr){
       console.log(xhr.responseJSON.errors);
