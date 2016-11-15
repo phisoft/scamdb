@@ -44,6 +44,11 @@ $("#submit-form").click(function(e){
       setTimeout(function(){
         $("#form-error").html("");
       }, 2500)
+      //reset error
+      $("input").each(function(el){
+        this.setCustomValidity("");
+        this.checkValidity();
+      })
     })
     .fail(function(xhr){
       console.log(xhr.responseJSON.errors);
