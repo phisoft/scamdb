@@ -40,6 +40,12 @@ $("#submit-form").click(function(e){
     })
     .fail(function(xhr){
       console.log(xhr.responseJSON.errors);
+      //reset
+      $("input").each(function(el){
+        this.setCustomValidity("");
+        this.checkValidity();
+      })
+      //check valid
       $("#form-error").html("One of the field have invalid value."); 
       $.each(xhr.responseJSON.errors, function(key, value){
         $("#" + key)[0].setCustomValidity(value[0]);
