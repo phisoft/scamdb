@@ -299,7 +299,7 @@
     </div></div>
     <div class="row"><div class="column">
     <label id="info" for="info"> Scam Details </label>
-    <input name="info" multiline placeholder="eg: Pretend to be a good muslim with 8 months pregnant wife" type="text" />
+    <input name="info" multiline placeholder="Macbook Pro/Air Scam" type="text" />
     </div></div>
     <br/>
     <input id="submit-form" type="submit" value="Submit" />
