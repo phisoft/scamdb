@@ -1,6 +1,6 @@
 <div class="search">
   <h3> Check before you pay.</h3>
-  <p class="header-info"> Search through list phone, email, passport & bank account number previously reported used by scammers</p> 
+  <p class="header-info"> Check whether phone, email, passport & bank account number was previously used by scammers</p> 
   <form method="get" action="/scammers">
     <div class="row">
     <div class="column"><input id="query" type="text" name="query" size="30" placeholder="Name, passport, email, phone or bank account" required /></div>
