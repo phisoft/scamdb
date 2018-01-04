@@ -10,10 +10,10 @@ config :scamdb,
   ecto_repos: [Scamdb.Repo]
 
 # Configures the endpoint
-config :scamdb, Scamdb.Endpoint,
+config :scamdb, ScamdbWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "5zKGTrDKRZtKfgTRfJVuSoFDSFjcLv3Yoml1eA7jTvE96JC0TDAAgCw5kJMQWnBx",
-  render_errors: [view: Scamdb.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "+5honoZY+FkaQhDKrN9LwNLszIQownzYzWKa0pa22Dd2N/8mNy3Bz76I4xxjveMN",
+  render_errors: [view: ScamdbWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: Scamdb.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
