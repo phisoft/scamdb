@@ -18,7 +18,7 @@
           <ul class="nav nav-pills pull-right">
           </ul>
         </nav>
-        <span class="logo">ScamDB</span>
+        <span class="logo"><a href="/"><img src="<%= static_path(@conn, "/images/scamdb.png") %>" alt="scam database" /></a></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -29,7 +29,7 @@
       </main>
 
       <footer>
-        &copy; 2016 ScamDB.org
+        &copy; 2016-2017 ScamDB.org
       </footer>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

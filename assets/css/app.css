@@ -13,8 +13,13 @@
   border-radius: 0.5em;
 }
 
-input[name=query] {
+input#query {
   background-color: white;
+}
+
+input[type=submit] {
+  background-color: darkred !important;
+  border-color: none !important;
 }
 
 @media (min-width: 768px) {
@@ -44,4 +49,13 @@ input[name=query] {
 
 #form-error {
   color: red;
+}
+
+footer {
+  font-size: small;
+  color: silver;
+}
+
+label {
+  font-size: normal;
 }
