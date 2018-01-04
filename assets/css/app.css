@@ -1,3 +1,8 @@
+body {
+  background-color: #f1f3f5;
+  background-color: #6b6b6b;
+}
+
 .alert:empty { display: none; }
 
 .logo {
@@ -7,19 +12,23 @@
 }
 
 .search {
-  background-color: #f0f0f0;
+  background-color: #d1d1d1;
   padding: 30px;
   margin: 10px;
   border-radius: 0.5em;
 }
 
 input#query {
-  background-color: white;
+  background-color: white !important;
+}
+
+input[type=text], input[type=email], select {
+  background-color: #ccc !important;
 }
 
 input[type=submit] {
   background-color: darkred !important;
-  border-color: none !important;
+  border: none !important;
 }
 
 @media (min-width: 768px) {
@@ -47,6 +56,10 @@ input[type=submit] {
   color: red;
 }
 
+.white {
+  color: white;
+}
+
 #form-error {
   color: red;
 }
@@ -56,6 +69,6 @@ footer {
   color: silver;
 }
 
-label {
-  font-size: normal;
+h5, label {
+  color: white;
 }
