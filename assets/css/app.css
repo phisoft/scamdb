@@ -1,6 +1,6 @@
 body {
   background-color: #f1f3f5;
-  background-color: #6b6b6b;
+  background-color: #eee;
 }
 
 .alert:empty { display: none; }
@@ -23,7 +23,7 @@ input#query {
 }
 
 input[type=text], input[type=email], select {
-  background-color: #ccc !important;
+  background-color: #fff !important;
 }
 
 input[type=submit] {
@@ -56,9 +56,6 @@ input[type=submit] {
   color: red;
 }
 
-.white {
-  color: white;
-}
 
 #form-error {
   color: red;
@@ -69,6 +66,17 @@ footer {
   color: silver;
 }
 
+.white {
+  color: #666;
+}
+
 h5, label {
-  color: white;
+  color: #666;
+}
+
+li { 
+  list-style: none;
+  display: inline;
+  margin-right: 1em;
+  padding: 0.5em;
 }

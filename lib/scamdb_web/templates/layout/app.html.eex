@@ -14,11 +14,14 @@
   <body>
     <div class="container">
       <header class="header">
+        <span class="logo"><a href="/"><img src="<%= static_path(@conn, "/images/scamdb.png") %>" alt="scam database" /></a></span>
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
+            <li><a href="/db"> Scammer Directory </a></li>
+            <li><a href="/badge"> Badge </a></li>
+            <li><a href="/api"> Developer API </a></li>
           </ul>
         </nav>
-        <span class="logo"><a href="/"><img src="<%= static_path(@conn, "/images/scamdb.png") %>" alt="scam database" /></a></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
