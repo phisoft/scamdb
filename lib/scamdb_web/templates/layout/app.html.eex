@@ -7,7 +7,7 @@
     <meta name="description" content="Scammer Database Database of phone, bank account number, phone used in online scams transaction">
     <meta name="author" content="scamdb.org">
 
-    <title>ScamDB - Scam Database!</title>
+    <title>ScamDB - Internet Scam Database!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -32,7 +32,7 @@
       </main>
 
       <footer>
-        &copy; 2016-2017 ScamDB.org
+        &copy; 2016-2017 ScamDB.org.All info is just for reference and scamdb.org not responsible for misleading information.
       </footer>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

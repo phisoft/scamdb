@@ -14,7 +14,7 @@
 
 <div class="container form">
   <h5> Scammed? </h5>
-  <p class="header-info white"> Help others like you by submitting scammers information below.</p> 
+  <p class="header-info white"> Help others like you by submitting scammer information below.</p> 
   <p id="form-error"> </p>
   <form id="form" method="post" action="/scammers">
     <input type="hidden" id="csrf" name="_csrf_token" value="<%= get_csrf_token() %>" />
