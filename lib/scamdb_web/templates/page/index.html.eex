@@ -284,21 +284,21 @@
       <input id="bank_account" name="bank_account" placeholder="Eg: 312194916977" type="text" />
     </div></div>
     <div class="row"><div class="column">
-      <label for="passport"> Passport No/ID (optional) </label>
+      <label for="passport"> Passport No/ID <span class="optional"> (optional) </span> </label>
       <input id="passport" name="passport" placeholder="Eg: HA847477487" type="text" />
     </div><div class="column">
-      <label for="phone"> Phone Number (optional) </label>
+      <label for="phone"> Phone Number <span class="optional"> (optional) </span> </label>
       <input id="phone" name="phone" placeholder="Eg: +60172964533 (international format)" type="text" />
     </div></div>
     <div class="row"><div class="column">
-      <label for="website"> Website (optional) </label>
+      <label for="website"> Website <span class="optional">(optional)</span> </label>
       <input id="website" name="website" placeholder="Eg: mudah.my (where scammer seen active)" type="text" />
     </div><div class="column">
-      <label for="email"> Email (optional) </label>
+      <label for="email"> Email <span class="optional">(optional)</span> </label>
       <input id="email" name="email" placeholder="Eg: saimscammer@gmail.com" type="email" />
     </div></div>
     <div class="row"><div class="column">
-    <label id="info" for="info"> Scam Details (optional) </label>
+    <label id="info" for="info"> Scam Details <span class="optional">(optional)</span></label>
     <input name="info" multiline placeholder="Macbook Pro/Air Scam" type="text" />
     </div></div>
     <br/>

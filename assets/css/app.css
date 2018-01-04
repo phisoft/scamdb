@@ -80,3 +80,9 @@ li {
   margin-right: 1em;
   padding: 0.5em;
 }
+
+.optional {
+  font-size: small;
+  font-weight: normal;
+  font-style: italic; 
+}
