@@ -5,7 +5,6 @@
     <td> Bank Account </td>
     <td> Scammer Name </td>
     <td> Phone </td>
-    <td> Email </td>
     <td> Website </td>
     <td> Country </td>
   </tr>
@@ -15,7 +14,6 @@
       <td><a href="/account/<%= s.bank_account %>"><%= s.bank_account %></a></td>
       <td><%= s.full_name %></td>
       <td><%= s.phone || "-" %></td>
-      <td><%= s.email || "-"  %></td>
       <td><%= s.website || "-"  %></td>
       <td><%= s.country %></td>
     </tr>
