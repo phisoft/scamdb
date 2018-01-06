@@ -110,3 +110,7 @@ li {
   margin-bottom: 50px;
   border-radius: 0.2em;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}

@@ -307,7 +307,7 @@
   <h5> Recently added scam bank account number </h5>
   <%= for b <- @banks do %>  
     <div class="row"> 
-      <div class="column column-33"> <a href="/account/<%= b.bank_account %>"><%= b.bank_name %> (<%= b.bank_account %>)</a></div>
+      <div class="column capitalize"> <a href="/account/<%= b.bank_account %>"><%= b.bank_name %> (<%= b.bank_account %>)</a></div>
     </div>
   <% end %>
 </div>
