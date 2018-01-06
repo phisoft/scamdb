@@ -1,7 +1,7 @@
 <div class="search">
   <h3> Check before you pay.</h3>
   <p class="header-info"> Check whether phone, email, passport & bank account number was previously used by scammers</p> 
-  <form method="get" action="/scammers">
+  <form method="get" action="/api/v1/check">
     <div class="row">
     <div class="column"><input id="query" type="text" name="query" size="30" placeholder="Name, passport, email, phone or bank account" required /></div>
     <div class="column"><input id="submit-search" type="submit" value="Search" /></div>
@@ -11,12 +11,12 @@
     </div>
   </form>
 </div>
-
 <div class="container form">
+  <br/><br/>
   <h5> Scammed? </h5>
-  <p class="header-info white"> Help others like you by submitting scammer information below.</p> 
+  <p class="header-info white"> Help others like you by submitting scammer information <a id="toggle-show-form" href="#form"> Submit scam </a> </p>
   <p id="form-error"> </p>
-  <form id="form" method="post" action="/scammers">
+  <form id="form" method="post" action="/api/v1/scam">
     <input type="hidden" id="csrf" name="_csrf_token" value="<%= get_csrf_token() %>" />
     <div class="row"><div class="column">
       <label for="full_name"> Full Name </label>
@@ -304,4 +304,10 @@
     <br/>
     <input id="submit-form" type="submit" value="Submit" />
   </form>
+  <h6> Recently added scam account number </h6>
+  <ul>
+  <%= for b <- @banks do %>  
+    <li> <%= b.bank_account %></li>
+  <% end %>
+  </ul>
 </div>

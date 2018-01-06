@@ -53,6 +53,6 @@ config :scamdb, Scamdb.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "rogon",
   password: "rogon",
-  database: "scamdb_dev",
+  database: "scamdb",
   hostname: "localhost",
   pool_size: 2

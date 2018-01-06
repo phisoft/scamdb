@@ -31,8 +31,9 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
-      <footer>
-        &copy; 2016-2017 ScamDB.org.All info is just for reference and scamdb.org not responsible for misleading information.
+      <footer class="container">
+        All info is just for reference and scamdb.org not responsible for misleading information. <br/>
+        &copy; 2016-2017 ScamDB.org.
       </footer>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>

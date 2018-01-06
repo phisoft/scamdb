@@ -11,6 +11,7 @@ defmodule Scamdb.Scam do
     field :ip, :string
     field :website, :string
     field :country, :string
+    field :detail, :string
     timestamps()
   end
 

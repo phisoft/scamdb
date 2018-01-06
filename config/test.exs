@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :scamdb, Scamdb.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "rogon",
+  password: "rogon",
   database: "scamdb_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

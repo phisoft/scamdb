@@ -12,6 +12,7 @@ defmodule Scamdb.Repo.Migrations.CreateScammer do
       add :ip, :string
       add :website, :string
       add :country, :string
+      add :detail, :string
 
       timestamps()
     end
