@@ -12,15 +12,15 @@ $("#submit-search").click(function(e){
   var query = { query: $("#query").val() };
   $.get("/api/v1/check", query, function(response, status, xhr){
     var res = response.length > 0 ? 
-      '<span class="risky"> Risky </span>' : 
-      '<span class="clean"> Clean </span>' ;
+      '<span class="risky"> Risky (' + response.length + ' case reported) </span>' : 
+      '<span class="clean"> Clean. No reported case.</span>' ;
 
-    $("#search-result").html("Verdict: " + res);
+    $("#search-result").html(res);
   })
 })
 
 $("#form").hide();
-$("#toggle-show-form").click(function(e){
+$(".toggle-show-form").click(function(e){
   if($("#form").is(":hidden")){
     $("#form").show();
   }else{

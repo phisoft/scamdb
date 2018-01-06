@@ -17,12 +17,14 @@ defmodule ScamdbWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/db", PageController, :show
-    get "/scammer/:full_name", PageController, :info
+    get "/db", PageController, :list
+    get "/scammer/:full_name", PageController, :show
     get "/id/:id_no", PageController, :identity
     get "/bank/:bank_name", PageController, :bank
     get "/account/:acc_no", PageController, :account
     get "/email/:email", PageController, :account
+    get "/badge/:query", PageController, :badge
+    get "/api", PageController, :api
   end
 
   scope "/api/v1", ScamdbWeb do

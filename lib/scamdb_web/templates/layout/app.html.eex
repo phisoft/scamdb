@@ -18,7 +18,6 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li><a href="/db"> Scammer Directory </a></li>
-            <li><a href="/badge"> Badge </a></li>
             <li><a href="/api"> Developer API </a></li>
           </ul>
         </nav>

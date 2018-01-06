@@ -9,7 +9,8 @@ defmodule ScamdbWeb.PageController do
 
   def index(conn, _params) do
     latest_scams = Scam 
-      |> limit(5)
+      |> where([u], not is_nil(u.bank_account))
+      |> limit(6)
       |> Repo.all()
 
     conn
@@ -17,20 +18,40 @@ defmodule ScamdbWeb.PageController do
       |> render(:index)
   end
 
-  def show(conn, _params) do
+  def list(conn, _params) do
+    result = Scam |> Repo.all()
     conn
+      |> assign(:scammers, result)
+      |> assign(:total, Enum.count(result))
+      |> assign(:current_url, current_url(conn))
+      |> render(:list)
   end 
 
-  def info(conn, _params) do
+  def info(conn, %{ "full_name" => full_name }) do
+    result = Scam |> where([u], u.full_name == ^full_name) |> Repo.all()
     conn
+      |> assign(:info, Enum.at(result, 0))
+      |> assign(:total, Enum.count(result))
+      |> assign(:current_url, current_url(conn))
+      |> render(:show)
   end
 
-  def identity(conn, _params) do
+  def identity(conn, %{ "id_no" => id_no }) do
+    result = Scam |> where([u], u.passport == ^id_no) |> Repo.all()
     conn
+      |> assign(:info, Enum.at(result, 0))
+      |> assign(:total, Enum.count(result))
+      |> assign(:current_url, current_url(conn))
+      |> render(:show)
   end
 
-  def bank(conn, _params) do
+  def bank(conn, %{ "bank_name" => bank_name }) do
+    result = Scam |> where([u], u.bank_name == ^bank_name) |> Repo.all()
     conn
+      |> assign(:info, Enum.at(result, 0))
+      |> assign(:total, Enum.count(result))
+      |> assign(:current_url, current_url(conn))
+      |> render(:show)
   end
 
   def account(conn, %{ "acc_no" => account }) do
@@ -41,4 +62,9 @@ defmodule ScamdbWeb.PageController do
       |> assign(:current_url, current_url(conn))
       |> render(:show)
   end
+
+  def api(conn, _params) do
+    conn |> render(:api)
+  end 
+
 end

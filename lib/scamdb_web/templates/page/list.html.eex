@@ -1,0 +1,24 @@
+<div class="container">
+  <table>
+  <tr>
+    <td> Bank Name </td>
+    <td> Bank Account </td>
+    <td> Scammer Name </td>
+    <td> Phone </td>
+    <td> Email </td>
+    <td> Website </td>
+    <td> Country </td>
+  </tr>
+  <%= for s <- @scammers do %>  
+    <tr>
+      <td><%= s.bank_name %></td>
+      <td><a href="/account/<%= s.bank_account %>"><%= s.bank_account %></a></td>
+      <td><%= s.full_name %></td>
+      <td><%= s.phone || "-" %></td>
+      <td><%= s.email || "-"  %></td>
+      <td><%= s.website || "-"  %></td>
+      <td><%= s.country %></td>
+    </tr>
+  <% end %>
+  </table> 
+</div>

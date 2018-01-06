@@ -1,0 +1,16 @@
+<div class="container">
+  <h5> Check record for scammers </h5>
+  Send GET request to api url below with param "query"
+  <div class="code">
+    https://www.scamdb.org/api/v1/check?query=<b>search-query</b>
+  </div> 
+  Where search query is the information to be checked. Eg; bank account number
+
+  <br/><br/><br/><br/>
+  <h5> Display badge (Coming soon) </h5>
+  Return an url to badge png image depending on the search status
+  <div class="code">
+    https://www.scamdb.org/api/v1/badge?query=phone_or_email
+  </div>
+  You can use it inside inside inside img src tag  
+</div>

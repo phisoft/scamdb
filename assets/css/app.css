@@ -101,3 +101,12 @@ li {
   border-radius: 0.2em;
   color: white;
 }
+
+.code {
+  background-color: #000;
+  color: white;
+  padding: 0.5em;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 0.2em;
+}
