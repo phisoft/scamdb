@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="report-total"> <%= @total %> reported </div>
+  <table>
+    <tr><td>Bank</td><td><%= @info.bank_name %></td></tr>
+    <tr><td>Account Number</td><td><%= @info.bank_account %></td></tr>
+    <tr><td>Full Name</td><td><%= @info.full_name %></td></tr>
+    <tr><td>ID</td><td><%= @info.passport || "-" %></td></tr>
+    <tr><td>Email</td><td><%= @info.email || "-"  %></td></tr>
+    <tr><td>Phone</td><td><%= @info.phone || "-" %></td></tr>
+    <tr><td>Website</td><td><%= @info.website || "-" %></td></tr>
+    <tr><td>Country</td><td><%= @info.country %></td></tr>
+    <tr><td>Detail</td><td><%= @info.detail || "-"  %></td></tr>
+    <tr><td>Reported On</td><td><%= @info.inserted_at %></td></tr>
+  </table> 
+<div class="fb-comments" data-href="<%= @current_url %>"></div>
+</div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11&appId=171731203585873';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

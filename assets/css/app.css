@@ -62,6 +62,7 @@ input[type=submit] {
 }
 
 footer {
+  margin-top: 100px !important;
   font-size: small;
   color: silver;
 }
@@ -85,4 +86,18 @@ li {
   font-size: small;
   font-weight: normal;
   font-style: italic; 
+}
+
+.reported_on {
+  font-size: small;
+  font-style: italic;
+}
+
+.report-total {
+  background-color: darkred; 
+  width: 100px;
+  padding: 0.2em;
+  text-align: center;
+  border-radius: 0.2em;
+  color: white;
 }

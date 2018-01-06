@@ -14,7 +14,7 @@ defmodule ScamdbWeb.PageController do
 
     conn
       |> assign(:banks, latest_scams)
-      |> render("index.html")
+      |> render(:index)
   end
 
   def show(conn, _params) do
@@ -33,7 +33,12 @@ defmodule ScamdbWeb.PageController do
     conn
   end
 
-  def account(conn, _params) do
+  def account(conn, %{ "acc_no" => account }) do
+    result = Scam |> where([u], u.bank_account == ^account) |> Repo.all()
     conn
+      |> assign(:info, Enum.at(result, 0))
+      |> assign(:total, Enum.count(result))
+      |> assign(:current_url, current_url(conn))
+      |> render(:show)
   end
 end
