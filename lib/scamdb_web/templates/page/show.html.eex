@@ -1,7 +1,7 @@
 <div class="container">
   <div class="report-total"> <%= @total %> reported </div>
   <table>
-    <tr><td>Bank</td><td><%= @info.bank_name %></td></tr>
+    <tr><td>Bank</td><td class="capitalize"><%= @info.bank_name %></td></tr>
     <tr><td>Account Number</td><td><%= @info.bank_account %></td></tr>
     <tr><td>Full Name</td><td><%= @info.full_name %></td></tr>
     <tr><td>ID</td><td><%= @info.passport || "-" %></td></tr>
