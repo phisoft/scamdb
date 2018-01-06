@@ -1,11 +1,11 @@
 <div class="container">
   <table>
   <tr>
-    <td> Bank Name </td>
-    <td> Bank Account </td>
-    <td> Scammer Name </td>
-    <td> Website </td>
-    <td> Country </td>
+    <th> Bank Name </th>
+    <th> Bank Account </th>
+    <th> Scammer Name </th>
+    <th> Website </th>
+    <th> Country </th>
   </tr>
   <%= for s <- @scammers do %>  
     <tr>
