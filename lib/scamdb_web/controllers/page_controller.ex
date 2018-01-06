@@ -9,6 +9,7 @@ defmodule ScamdbWeb.PageController do
 
   def index(conn, _params) do
     latest_scams = Scam 
+      |> where([u], not is_nil(u.bank_name))
       |> where([u], not is_nil(u.bank_account))
       |> order_by([u], [ desc: u.id ])
       |> limit(6)
