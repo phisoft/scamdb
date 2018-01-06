@@ -10,6 +10,7 @@ defmodule ScamdbWeb.PageController do
   def index(conn, _params) do
     latest_scams = Scam 
       |> where([u], not is_nil(u.bank_account))
+      |> order_by([u], [ desc: u.id ])
       |> limit(6)
       |> Repo.all()
 
@@ -19,7 +20,7 @@ defmodule ScamdbWeb.PageController do
   end
 
   def list(conn, _params) do
-    result = Scam |> Repo.all()
+    result = Scam |> order_by([s], [ desc: s.id ]) |> Repo.all()
     conn
       |> assign(:scammers, result)
       |> assign(:total, Enum.count(result))
