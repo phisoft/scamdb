@@ -9,9 +9,9 @@
   </tr>
   <%= for s <- @scammers do %>  
     <tr>
-      <td><%= s.bank_name %></td>
+      <td class="capitalize"><%= s.bank_name %></td>
       <td><a href="/account/<%= s.bank_account %>"><%= s.bank_account %></a></td>
-      <td><%= s.full_name %></td>
+      <td class="capitalize"><%= s.full_name %></td>
       <td><%= s.website || "-"  %></td>
       <td><%= s.country %></td>
     </tr>
