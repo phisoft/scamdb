@@ -12,7 +12,7 @@
     <tr><td>Detail</td><td><%= @info.detail || "-"  %></td></tr>
     <tr><td>Reported On</td><td><%= @info.inserted_at %></td></tr>
   </table> 
-<div class="fb-comments" data-href="<%= @current_url %>"></div>
+<div class="fb-comments" data-href="<%= @current_url %>" data-width="500" data-numposts="10"></div>
 </div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
