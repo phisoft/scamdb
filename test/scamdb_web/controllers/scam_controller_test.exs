@@ -8,6 +8,11 @@ defmodule ScamdbWeb.ScamControllerTest do
     assert 200 == status 
   end
 
+  test "GET /api/v1/check empty query", %{conn: conn} do
+    %{ status: status } = get conn, scam_path(conn, :check, query: nil)
+    assert 200 == status 
+  end
+
   test "POST /api/v1/scam", %{conn: conn} do
     args = %{
       full_name: "world",

@@ -8,16 +8,15 @@ defmodule ScamdbWeb.ScamController do
 
 
   def check(conn, %{"query" => query}) do
-    query = 
-      from u in Scam,
-        select: u,
-        where: ilike(u.full_name, ^"#{query}%") 
-        or u.phone == ^query
-        or u.email == ^query
-        or u.bank_account == ^query
-        or u.passport == ^query
+    result = Scam
+      |> where([s], ilike(s.full_name, ^"#{query}%"))
+      |> or_where([s], s.phone == ^query)
+      |> or_where([s], s.email == ^query)
+      |> or_where([s], s.bank_account == ^query)
+      |> or_where([s], s.passport == ^query)
+      |> Repo.all()
 
-    json conn, Repo.all(query)
+    json conn, result || []
   end
 
 
